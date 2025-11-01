@@ -3,6 +3,6 @@
 
 #include <vector>
 
-int find_median_deterministic(const std::vector<int>& vec);
+int find_median_deterministic(const std::vector<int>& vec, int k);
 
 #endif    // DETERMINISTIC_HPP_
