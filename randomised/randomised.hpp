@@ -3,6 +3,6 @@
 
 #include <vector>
 
-int find_median_randomised(const std::vector<int>& vec);
+int find_median_randomised(const std::vector<int>& vec, int k);
 
 #endif    // RANDOMISED_HPP_

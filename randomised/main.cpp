@@ -49,3 +49,28 @@ TEST(QuickselectTest, TwoElements) {
     EXPECT_EQ(find_median_randomised(arr, 1), 5);
     EXPECT_EQ(find_median_randomised(arr, 2), 10);
 }
+
+// Test a large array
+TEST(QuickselectTest, LargeArray1) {
+    std::vector<int> arr = {
+        34, 7, 23, 32, 5, 62, 78, 0, 12, 99,
+        21, 54, 11, 8, 17, 46, 3, 29, 50, 19
+    };
+    EXPECT_EQ(find_median_randomised(arr, 1), 0);
+    EXPECT_EQ(find_median_randomised(arr, 10), 23);
+    EXPECT_EQ(find_median_randomised(arr, 20), 99);
+}
+
+// Test a larger array
+TEST(QuickselectTest, LargeArray2) {
+    std::vector<int> arr = {
+        100, 23, 54, 2, 76, 12, 89, 34, 67, 45,
+        90, 11, 38, 29, 50, 61, 18, 3, 72, 6,
+        42, 81, 5, 14, 7, 20, 55, 9, 31, 19
+    };
+    EXPECT_EQ(find_median_randomised(arr, 1), 2);
+    EXPECT_EQ(find_median_randomised(arr, 5), 7);
+    EXPECT_EQ(find_median_randomised(arr, 10), 29);
+    EXPECT_EQ(find_median_randomised(arr, 15), 50);
+    EXPECT_EQ(find_median_randomised(arr, 30), 100);
+}
