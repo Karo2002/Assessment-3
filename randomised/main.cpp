@@ -37,6 +37,24 @@ TEST(QuickselectTest, Duplicates) {
     EXPECT_EQ(find_median_randomised(arr, 6), 4);
 }
 
+// Test array with all same elements
+TEST(DeterministicSelectTest, AllSame) {
+    std::vector<int> arr = {7, 7, 7, 7, 7};
+    EXPECT_EQ(find_median_randomised(arr, 1), 7);
+    EXPECT_EQ(find_median_randomised(arr, 3), 7);
+    EXPECT_EQ(find_median_randomised(arr, 5), 7);
+}
+
+// Test array with many duplicates
+TEST(DeterministicSelectTest, ManyDuplicates) {
+    std::vector<int> arr = {5, 3, 5, 1, 3, 5, 1, 3, 5};
+    // Sorted: [1, 1, 3, 3, 3, 5, 5, 5, 5]
+    EXPECT_EQ(find_median_randomised(arr, 1), 1);
+    EXPECT_EQ(find_median_randomised(arr, 2), 1);
+    EXPECT_EQ(find_median_randomised(arr, 5), 3);
+    EXPECT_EQ(find_median_randomised(arr, 9), 5);
+}
+
 // Test single element array
 TEST(QuickselectTest, SingleElement) {
     std::vector<int> arr = {42};
