@@ -4,7 +4,7 @@
 #include "deterministic.hpp" 
 
 // Test a small array in ascending order
-TEST(QuickselectTest, SmallAscending) {
+TEST(DeterministicSelectTest, SmallAscending) {
     std::vector<int> arr = {1, 2, 3, 4, 5};
     EXPECT_EQ(find_median_deterministic(arr, 1), 1);
     EXPECT_EQ(find_median_deterministic(arr, 3), 3);
@@ -12,7 +12,7 @@ TEST(QuickselectTest, SmallAscending) {
 }
 
 // Test a small array in descending order
-TEST(QuickselectTest, SmallDescending) {
+TEST(DeterministicSelectTest, SmallDescending) {
     std::vector<int> arr = {5, 4, 3, 2, 1};
     EXPECT_EQ(find_median_deterministic(arr, 1), 1);
     EXPECT_EQ(find_median_deterministic(arr, 2), 2);
@@ -20,7 +20,7 @@ TEST(QuickselectTest, SmallDescending) {
 }
 
 // Test an array with random order
-TEST(QuickselectTest, RandomOrder) {
+TEST(DeterministicSelectTest, RandomOrder) {
     std::vector<int> arr = {7, 2, 9, 1, 5};
     EXPECT_EQ(find_median_deterministic(arr, 1), 1);
     EXPECT_EQ(find_median_deterministic(arr, 3), 5);
@@ -28,7 +28,7 @@ TEST(QuickselectTest, RandomOrder) {
 }
 
 // Test array with duplicates
-TEST(QuickselectTest, Duplicates) {
+TEST(DeterministicSelectTest, Duplicates) {
     std::vector<int> arr = {4, 2, 4, 1, 3, 2};
     EXPECT_EQ(find_median_deterministic(arr, 1), 1);
     EXPECT_EQ(find_median_deterministic(arr, 2), 2);
@@ -56,20 +56,20 @@ TEST(DeterministicSelectTest, ManyDuplicates) {
 }
 
 // Test single element array
-TEST(QuickselectTest, SingleElement) {
+TEST(DeterministicSelectTest, SingleElement) {
     std::vector<int> arr = {42};
     EXPECT_EQ(find_median_deterministic(arr, 1), 42);
 }
 
 // Test two element array
-TEST(QuickselectTest, TwoElements) {
+TEST(DeterministicSelectTest, TwoElements) {
     std::vector<int> arr = {10, 5};
     EXPECT_EQ(find_median_deterministic(arr, 1), 5);
     EXPECT_EQ(find_median_deterministic(arr, 2), 10);
 }
 
 // Test a large array
-TEST(QuickselectTest, LargeArray1) {
+TEST(DeterministicSelectTest, LargeArray1) {
     std::vector<int> arr = {
         34, 7, 23, 32, 5, 62, 78, 0, 12, 99,
         21, 54, 11, 8, 17, 46, 3, 29, 50, 19
@@ -80,7 +80,7 @@ TEST(QuickselectTest, LargeArray1) {
 }
 
 // Test a larger array
-TEST(QuickselectTest, LargeArray2) {
+TEST(DeterministicSelectTest, LargeArray2) {
     std::vector<int> arr = {
         100, 23, 54, 2, 76, 12, 89, 34, 67, 45,
         90, 11, 38, 29, 50, 61, 18, 3, 72, 6,
